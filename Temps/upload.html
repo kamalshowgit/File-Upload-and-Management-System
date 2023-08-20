@@ -1,0 +1,67 @@
+<!-- file_upload_app/templates/file_upload_app/upload.html -->
+
+{% extends 'base.html' %}
+
+<!-- Inbuilt CSS -->
+<style>
+  .container {
+    padding-top: 50px;
+  }
+
+  .form-group {
+    margin-bottom: 20px;
+  }
+
+  .card {
+    border: none;
+  }
+
+  .card-title {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+
+  .btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+  }
+
+  .btn-primary:hover {
+    background-color: #0069d9;
+    border-color: #0062cc;
+  }
+</style>
+
+<!-- Inbuilt JavaScript -->
+<script>
+  // Prevent form resubmission on page refresh
+  if (window.history.replaceState) {
+    window.history.replaceState(null, null, window.location.href);
+  }
+</script>
+{% block content %}
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-lg-6">
+      <div class="card">
+        <div class="card-body">
+          <h1 class="card-title">Upload a file</h1>
+          <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="form-group">
+              <label for="file">Select a CSV or XLSX file:</label>
+              <input type="file" name="file" id="file" accept=".csv, .xlsx" class="form-control-file">
+              <small class="form-text text-muted">Only CSV and XLSX files are allowed.</small>
+            </div>
+            <div class="text-center">
+              <button type="submit" class="btn btn-primary">Upload</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+{% endblock %}

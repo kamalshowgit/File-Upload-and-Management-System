@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Admin Panel</title>
+	<style>
+		/* Style the table */
+		table {
+		  font-family: Arial, Helvetica, sans-serif;
+		  border-collapse: collapse;
+		  width: 100%;
+		}
+
+		table td, table th {
+		  border: 1px solid #ddd;
+		  padding: 8px;
+		}
+
+		table tr:nth-child(even){background-color: #f2f2f2;}
+
+		table tr:hover {background-color: #ddd;}
+
+		table th {
+		  padding-top: 12px;
+		  padding-bottom: 12px;
+		  text-align: left;
+		  background-color: #4CAF50;
+		  color: white;
+		}
+
+		/* Style the buttons */
+		.button {
+		  background-color: #4CAF50; /* Green */
+		  border: none;
+		  color: white;
+		  padding: 10px 15px;
+		  text-align: center;
+		  text-decoration: none;
+		  display: inline-block;
+		  font-size: 16px;
+		  margin: 4px 2px;
+		  cursor: pointer;
+		}
+
+		.button:hover {
+		  background-color: #3e8e41;
+		}
+	</style>
+</head>
+<body>
+	<h2>List of Uploaded Files</h2>
+	<table>
+		<tr>
+			<th>File Name</th>
+			<th>Actions</th>
+		</tr>
+		{% for file in files %}
+			<tr>
+				<td>{{ file }}</td>
+				<td>
+					<!-- View button -->
+					<!-- <a href="{% url 'view-file' file %}" class="btn btn-primary">View</a> -->
+
+
+					<!-- Download button -->
+					<!-- <a href="{% url 'view-file' file %}?download=1" class="btn btn-success">Download</a> -->
+
+
+				</td>
+			</tr>
+		{% empty %}
+			<tr>
+				<td colspan="2">No files uploaded yet.</td>
+			</tr>
+		{% endfor %}
+	</table>
+</body>
+</html>
