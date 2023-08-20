@@ -37,7 +37,7 @@ During the course of my internship, I've created a web-based application that en
 Follow these steps to get the project up and running on your local machine:
 
 1. Clone the repository: `git clone https://github.com/kamalshowgit/File-Upload-and-Management-System`
-2. Navigate to the project directory: `cd file-upload-management`
+2. Navigate to the project directory: `cd File-Upload-and-Management-System`
 3. Install dependencies: `pip install`
 4. Set up the database (if required): Refer to the database setup documentation.
 
